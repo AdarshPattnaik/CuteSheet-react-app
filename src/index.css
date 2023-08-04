@@ -1,13 +1,356 @@
-body {
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Assistant&display=swap');
+
+:root {
+  --q-bg-color: #fcfcfc;
+  --q-nav-brand-color: rgb(119, 0, 231);
+  --q-btn-add-box1: rgb(143, 22, 255);
+  --q-btn-add-box2: rgb(182, 70, 247);
+  --q-primary-color: white;
+  --q-secondary-color: rgb(102, 9, 189);
+  --q-add-box-shadow-color: rgba(0, 0, 0, 0.2);
+  --q-item-box-shadow-color: rgba(0, 0, 0, 0.15);
 }
+
+body {
+  background-color: var(--q-bg-color);
+  z-index: 10;
+}
+
+/* Navbar */
+.navbar {
+  background-color: var(--q-bg-color) !important;
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--q-nav-brand-color) !important;
+}
+
+/* Hamburger */
+.navbar-toggler,
+.navbar-toggler:focus,
+.navbar-toggler:active {
+  color: transparent !important;
+  border: 1px solid rgba(108, 0, 180, 0.5);
+  outline: none;
+}
+
+.hamburger-icon {
+  color: rgba(108, 0, 180, 0.9);
+}
+
+/* Navbar Collapse: */
+.navbar-collapse {
+  justify-content: flex-end;
+}
+
+.navbar-nav {
+  margin-right: 0 !important;
+}
+
+.show {
+  border-top: 1px solid rgba(65, 0, 170, 0.3);
+  border-bottom: 1px solid rgba(65, 0, 170, 0.3);
+}
+
+/* Input Card: */
+.add-btn {
+  color: var(--q-btn-add-box1) !important;
+  background-color: var(--q-primary-color) !important;
+  height: 62px;
+  border-radius: 50%;
+  padding: 0 !important;
+  box-shadow: 0px 0px 5px var(--q-add-box-shadow-color);
+  animation: btn-anime 5s linear infinite;
+}
+
+.add-btn:hover {
+  color: var(--q-bg-color) !important;
+  background-color: var(--q-add-box-shadow-color) !important;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3) inset;
+}
+
+@keyframes btn-anime {
+  0% {
+    transform: scale(1);
+  }
+
+  10% {
+    transform: scale(1.2);
+  }
+
+  14% {
+    transform: scale(1.2) rotate(-30deg);
+  }
+
+  18% {
+    transform: scale(1.2) rotate(30deg);
+  }
+
+  22% {
+    transform: scale(1.2);
+  }
+
+  32% {
+    transform: scale(1);
+  }
+}
+
+.main-card {
+  height: 200px;
+  width: 200px;
+  background: radial-gradient(circle, var(--q-btn-add-box2), var(--q-btn-add-box1)) !important;
+  box-shadow: 0px 0px 50px 10px var(--q-add-box-shadow-color);
+}
+
+/* Input Modal: */
+.fade {
+  pointer-events: none;
+}
+
+.modal-dialog {
+  pointer-events: auto;
+}
+
+.modal-content {
+  font-family: 'Open Sans', sans-serif;
+}
+
+.modal-title {
+  color: var(--q-nav-brand-color);
+  font-size: 1.5rem !important;
+}
+
+.form-control:focus,
+.task-input-area:focus,
+.btn-close:focus,
+.outline-off:focus,
+.form-control:active,
+.task-input-area:active,
+.btn-close:active,
+.outline-off:active {
+  outline: none !important;
+  box-shadow: none;
+}
+
+.task-input-area {
+  resize: none;
+  width: 100%;
+  height: 150px;
+  border-radius: 5px;
+  padding: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.175);
+}
+
+.modal-header,
+.modal-footer {
+  border: none !important;
+}
+
+/* Item Cards: */
+.bg-card {
+  font-family: 'Assistant', sans-serif;
+  height: 200px;
+  width: 200px;
+  border: 1px solid rgba(142, 22, 255, 0.3);
+  box-shadow: 0px 0px 50px 10px var(--q-item-box-shadow-color);
+}
+
+.item-header {
+  margin-top: 10px;
+}
+
+.item-title {
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: var(--q-secondary-color);
+  margin-bottom: 0;
+}
+
+.item-title-input {
+  font-weight: bold;
+  color: var(--q-secondary-color);
+  width: 80%;
+  border-radius: 5px;
+  padding: 0px 5px;
+  border: none;
+}
+
+.item-title-input:focus,
+.item-title-input:active {
+  outline: none !important;
+  box-shadow: none;
+}
+
+.dropdown-toggle {
+  background-color: transparent !important;
+  color: rgb(29, 9, 65) !important;
+  border: none;
+  padding: 0;
+}
+
+.more-vert-icon {
+  font-size: 1rem !important;
+}
+
+.dropdown-toggle:focus,
+.dropdown-toggle:active {
+  outline: none !important;
+  box-shadow: none;
+}
+
+.dropdown-toggle::after {
+  display: none !important;
+}
+
+.dropdown-menu {
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+}
+
+.edit-btn {
+  color: rgb(15, 111, 255) !important;
+}
+.save-btn {
+  color: rgb(15, 199, 15) !important;
+}
+.leave-btn {
+  color: rgb(75, 88, 112) !important;
+}
+.delete-btn {
+  color: rgb(255, 13, 13) !important;
+}
+
+.delete-warn {
+  color: rgb(233, 151, 0);
+  font-size: 10px;
+}
+
+.item-text {
+  resize: none;
+  width: 100%;
+  height: 140px;
+  border-radius: 5px;
+  margin-top: 10px;
+  padding: 10px;
+  color: rgba(0, 0, 0, 0.95);
+  border: 1px solid rgba(140, 0, 255, 0.2);
+}
+
+.bg-selector {
+  width: 100%;
+  outline: none;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  background-color: white;
+  cursor: pointer;
+}
+
+.bg-selector:hover {
+  background-color: rgb(250, 243, 255);
+}
+
+#aquamarine {
+  background-color: aquamarine;
+}
+#chartreuse {
+  background-color: chartreuse;
+}
+#coral {
+  background-color: coral;
+}
+#cornflowerblue {
+  background-color: cornflowerblue;
+}
+#gold {
+  background-color: gold;
+}
+#hotpink {
+  background-color: hotpink;
+}
+#lavender {
+  background-color: lavender;
+}
+#orange {
+  background-color: orange;
+}
+#silver {
+  background-color: silver;
+}
+#plum {
+  background-color: plum;
+}
+
+/*
+1.  aquamarine
+2.  chartreuse
+3.  coral
+4.  cornflowerblue
+5.  gold
+6.  hotpink
+7.  lavender
+8.  orange
+9.  silver
+10. plum
+*/
+
+.item-text:focus,
+.item-text:active {
+  outline: none !important;
+  box-shadow: none;
+}
+
+/* Alert: */
+.alert-dialog {
+  border-radius: 10px;
+  box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.3);
+}
+
+.alert-body {
+  text-align: justify;
+}
+
+.alert-body p {
+  border-radius: 10px;
+  padding: 10px;
+}
+
+/* Social Icons */
+.social-icons .css-i4bv87-MuiSvgIcon-root {
+  color: var(--q-nav-brand-color);
+}
+
+.social-icons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+/* Media Query */
+@media screen and (max-width:991px) {
+  .social-icons {
+    margin-top: 11px;
+    margin-left: 2px;
+  }
+}
+
+@media screen and (max-width:425px) {
+  .navbar-brand {
+    font-size: 1.3rem;
+  }
+}
+
+/*
+Remaining Works:
+// 1. Add the functionality to add background color
+2. Tell user that empty input cannot get submit
+3. Social Media Icons
+*/
