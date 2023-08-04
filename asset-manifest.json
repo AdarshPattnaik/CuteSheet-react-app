@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/CuteSheet-react-app/static/css/main.f8bf350b.css",
+    "main.js": "/CuteSheet-react-app/static/js/main.2280e9ff.js",
+    "static/media/nav-icon.gif": "/CuteSheet-react-app/static/media/nav-icon.574445874dff7e3a0514.gif",
+    "static/media/modal-title-clip.mp4": "/CuteSheet-react-app/static/media/modal-title-clip.2a8572b40df99264cb57.mp4",
+    "static/media/alert-clip.mp4": "/CuteSheet-react-app/static/media/alert-clip.173d385cb33478a06887.mp4",
+    "index.html": "/CuteSheet-react-app/index.html",
+    "main.f8bf350b.css.map": "/CuteSheet-react-app/static/css/main.f8bf350b.css.map",
+    "main.2280e9ff.js.map": "/CuteSheet-react-app/static/js/main.2280e9ff.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f8bf350b.css",
+    "static/js/main.2280e9ff.js"
+  ]
+}
